@@ -158,6 +158,7 @@ def create_component_from_func(
 
                 return (accuracy, precision, recall)
     '''
+    packages_to_install += ["wandb"]
 
     component_spec = _func_to_component_spec(
         func=func,
@@ -172,4 +173,3 @@ def create_component_from_func(
         component_spec.save(output_component_file)
 
     return _create_task_factory_from_component_spec(component_spec)
-
